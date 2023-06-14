@@ -10,46 +10,45 @@
 </head>
 
 <body>
-	<button>Speak the value of var textToSpeak</button>
 	<div class="columns">
     <div class="columns">
-    <div class="column is-9">
+    <div class="column is-9 left-columns">
       <div class="columns ml-2">
 				<!-- COLUMN 1 -->
-        <div class="column is-one-fifth purple-bg">
+        <div class="column is-one-fifth purple-bg element-column">
 					<div class="column-title">1</div>
 					<div class="image-container m-0">
-						<img src="./images/turkey.png" alt="Image 1">
+						<img src="./images/turkey.png" id="col1_element1" alt="The Turkey">
 						<div class="image-name">The Turkey</div>
 					</div>
 					<div class="image-container m-0">
-						<img src="./images/mom.png" alt="Image 2">
+						<img src="./images/mom.png" id="col1_element2" alt="Mom">
 						<div class="image-name">Mom</div>
 					</div>
 					<div class="image-container m-0">
-						<img src="./images/dad.png" alt="Image 3">
+						<img src="./images/dad.png" id="col1_element3" alt="Dad">
 						<div class="image-name">Dad</div>
 					</div>
 					<div class="image-container m-0">
-						<img src="./images/dog.png" alt="Image 4">
+						<img src="./images/dog.png" id="col1_element4" alt="The Dog">
 						<div class="image-name">The Dog</div>
 					</div>
 					<div class="image-container m-0">
-						<img src="./images/teacher.png" alt="Image 5">
+						<img src="./images/teacher.png" id="col1_element5" alt="My Teacher">
 						<div class="image-name">My Teacher</div>
 					</div>
 					<div class="image-container m-0">
-						<img src="./images/elephant.png" alt="Image 6">
+						<img src="./images/elephant.png" id="col1_element6" alt="The Elephant">
 						<div class="image-name">The Elephant</div>
 					</div>
 					<div class="image-container m-0">
-						<img src="./images/cat.png" alt="Image 7">
+						<img src="./images/cat.png" id="col1_element7" alt="The Cat">
 						<div class="image-name">The Cat</div>
 					</div>
 				</div>
 
 				<!-- COLUMN 2 -->
-        <div class="column is-one-fifth light-blue-bg">
+        <div class="column is-one-fifth light-blue-bg element-column">
           <div class="column-title">2</div>
 					<div class="image-container m-0">
 						<img src="./images/sat.png" alt="Image 1">
@@ -78,7 +77,7 @@
         </div>
 
 				<!-- COLUMN 3 -->
-        <div class="column is-one-fifth green-bg">
+        <div class="column is-one-fifth green-bg element-column">
           <div class="column-title">3</div>
 					<div class="image-container m-0">
 						<img src="./images/turkey.png" alt="Image 1">
@@ -107,7 +106,7 @@
         </div>
 
 				<!-- COLUMN 4 -->
-        <div class="column is-one-fifth orange-bg">
+        <div class="column is-one-fifth orange-bg element-column">
           <div class="column-title">4</div>
 					<div class="image-container m-0">
 						<img src="./images/turkey.png" alt="Image 1">
@@ -140,7 +139,7 @@
         </div>
 
 				<!-- COLUMN 5 -->
-        <div class="column is-one-fifth pink-bg">
+        <div class="column is-one-fifth pink-bg element-column">
           <div class="column-title">5</div>
 					<div class="image-container m-0">
 						<img src="./images/turkey.png" alt="Image 1">
@@ -169,13 +168,25 @@
         </div>
       </div>
     </div>
-    <div class="column is-3">
-      <div class="round-button purple-bg">1</div>
-      <div class="round-button light-blue-bg">2</div>
-      <div class="round-button green-bg">3</div>
-      <div class="round-button orange-bg">4</div>
-      <div class="round-button pink-bg">5</div>
-    </div>
+    <div class="column ml-4">
+			<div class="columns is-flex-wrap-wrap is-flex-direction-column">
+				<div class="column is-3">
+					<div class="round-button purple-bg button1">1</div>
+				</div>
+				<div class="column is-3">
+					<div class="round-button light-blue-bg button2">2</div>
+				</div>
+				<div class="column is-3">
+					<div class="round-button green-bg button3">3</div>
+				</div>
+				<div class="column is-3">
+					<div class="round-button orange-bg button4">4</div>
+				</div>
+				<div class="column is-3">
+					<div class="round-button pink-bg button5">5</div>
+				</div>
+			</div>
+		</div>
   </div>
 	<script src="js/app.js"></script>
 </body>

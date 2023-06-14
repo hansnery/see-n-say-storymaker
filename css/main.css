@@ -1,5 +1,27 @@
 @charset "utf-8";
 /* Assignment 1 | COMP1073 Client-Side JavaScript */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: yellow;
+}
+
+.columns {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.element-column {
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.left-columns {
+  margin-right: 50px;
+}
+
 .purple-bg {
   background-color: purple;
   color: white;
@@ -25,13 +47,18 @@
 
 .round-button {
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 5px;
   color: white;
+  cursor: default;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.round-button:hover {
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
 }
 
 .column-title {
@@ -59,4 +86,8 @@
 .image-name {
   font-size: 16px;
   font-weight: bolder;
+}
+
+.highlighted {
+  background-color: yellow;
 }
