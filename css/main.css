@@ -17,6 +17,7 @@ body {
   border-radius: 10px;
   margin-left: 10px;
   margin-right: 10px;
+  outline: 2px solid black;
 }
 
 .left-columns {
