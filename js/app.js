@@ -32,33 +32,7 @@ function speakNow(string) {
 	synth.speak(utterThis);
 }
 
-function chooseElement(buttonNumber) {
-	// Increments the variable for the element chosen by each button
-	if (buttonNumber == 1) {
-		elementChosenForColumn1++;
-	} else if (buttonNumber == 2) {
-		elementChosenForColumn2++;
-	}	else if (buttonNumber == 3) {
-		elementChosenForColumn3++;
-	}	else if (buttonNumber == 4) {
-		elementChosenForColumn4++;
-	}	else if (buttonNumber == 5) {
-		elementChosenForColumn5++;
-	}
-
-	// Sets the variable for the element chosen by each button back to 1 if it reaches the maximum number of elements
-	if (elementChosenForColumn1 == 8) {
-		elementChosenForColumn1 = 1;
-	} else if (elementChosenForColumn2 == 7) {
-		elementChosenForColumn2 = 1;
-	} else if (elementChosenForColumn3 == 7) {
-		elementChosenForColumn3 = 1;
-	} else if (elementChosenForColumn4 == 8) {
-		elementChosenForColumn4 = 1;
-	} else if (elementChosenForColumn5 == 7) {
-		elementChosenForColumn5 = 1;
-	}
-
+function getElement() {
 	// Get the element to highlight for column 1
 	if (elementChosenForColumn1 == 1) {
 		element1 = document.getElementById('col1_element1');
@@ -137,6 +111,37 @@ function chooseElement(buttonNumber) {
 	}	else if (elementChosenForColumn5 == 6) {
 		element5 = document.getElementById('col5_element6');
 	}
+}
+
+function chooseElement(buttonNumber) {
+	// Increments the variable for the element chosen by each button
+	if (buttonNumber == 1) {
+		elementChosenForColumn1++;
+	} else if (buttonNumber == 2) {
+		elementChosenForColumn2++;
+	}	else if (buttonNumber == 3) {
+		elementChosenForColumn3++;
+	}	else if (buttonNumber == 4) {
+		elementChosenForColumn4++;
+	}	else if (buttonNumber == 5) {
+		elementChosenForColumn5++;
+	}
+
+	// Sets the variable for the element chosen by each button back to 1 if it reaches the maximum number of elements
+	if (elementChosenForColumn1 == 8) {
+		elementChosenForColumn1 = 1;
+	} else if (elementChosenForColumn2 == 7) {
+		elementChosenForColumn2 = 1;
+	} else if (elementChosenForColumn3 == 7) {
+		elementChosenForColumn3 = 1;
+	} else if (elementChosenForColumn4 == 8) {
+		elementChosenForColumn4 = 1;
+	} else if (elementChosenForColumn5 == 7) {
+		elementChosenForColumn5 = 1;
+	}
+
+	// Get elements chosen to form the phrase
+	getElement();
 
 	// Sets correct element to play sound and highlight image
 	if (buttonNumber == 1) {
@@ -187,63 +192,21 @@ button4.addEventListener('click', function() {
 button5.addEventListener('click', function() {
 	chooseElement(5);
 });
-playbackButton.addEventListener('click', function() {
+surpriseButton.addEventListener('click', function() {
 	// Set variables to a random element
 	elementChosenForColumn1 = Math.floor(Math.random() * 7) + 1;
 	elementChosenForColumn2 = Math.floor(Math.random() * 6) + 1;
 	elementChosenForColumn3 = Math.floor(Math.random() * 6) + 1;
 	elementChosenForColumn4 = Math.floor(Math.random() * 7) + 1;
 	elementChosenForColumn5 = Math.floor(Math.random() * 6) + 1;
-	console.log(elementChosenForColumn1);
-	console.log(elementChosenForColumn2);
-	console.log(elementChosenForColumn3);
-	console.log(elementChosenForColumn4);
-	console.log(elementChosenForColumn5);
+	// Get elements chosen to form the phrase
+	getElement();
 	// Speak alt of all the elements
-	textToSpeak = element1.getAttribute('alt');
+	textToSpeak = element1.getAttribute('alt') + " " + element2.getAttribute('alt') + " " + element3.getAttribute('alt') + " " + element4.getAttribute('alt') + " " + element5.getAttribute('alt');
 	speakNow(textToSpeak);
-	// Wait half a second before speaking the next element
-	setTimeout(function() {
-		textToSpeak = element2.getAttribute('alt');
-		speakNow(textToSpeak);
-	}, 250);
-	setTimeout(function() {
-		textToSpeak = element3.getAttribute('alt');
-		speakNow(textToSpeak);
-	}, 500);
-	setTimeout(function() {
-		textToSpeak = element4.getAttribute('alt');
-		speakNow(textToSpeak);
-	}, 1000);
-	setTimeout(function() {
-		textToSpeak = element5.getAttribute('alt');
-		speakNow(textToSpeak);
-	}, 1500);
 });
 playbackButton.addEventListener('click', function() {
 	// Speak alt of all the elements
 	textToSpeak = element1.getAttribute('alt') + " " + element2.getAttribute('alt') + " " + element3.getAttribute('alt') + " " + element4.getAttribute('alt') + " " + element5.getAttribute('alt');
-	console.log(textToSpeak);
 	speakNow(textToSpeak);
-	// // Wait half a second before speaking the next element
-	// setTimeout(function() {
-	// 	textToSpeak = element2.getAttribute('alt');
-	// 	console.log(textToSpeak);
-	// 	speakNow(textToSpeak);
-	// }, 250);
-	// setTimeout(function() {
-	// 	textToSpeak = element3.getAttribute('alt');
-	// 	console.log(textToSpeak);
-	// 	speakNow(textToSpeak);
-	// }, 500);
-	// setTimeout(function() {
-	// 	textToSpeak = element4.getAttribute('alt');
-	// 	console.log(textToSpeak);
-	// 	speakNow(textToSpeak);
-	// }, 1000);
-	// setTimeout(function() {
-	// 	textToSpeak = element5.getAttribute('alt');
-	// 	console.log(textToSpeak);
-	// 	speakNow(textToSpeak);
-	// }, 1500);
 });
