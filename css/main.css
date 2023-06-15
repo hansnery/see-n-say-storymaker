@@ -4,12 +4,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: yellow;
+  background: linear-gradient(to right, #FFFF00, #FFD700);
 }
 
 .columns {
   padding: 20px;
   border-radius: 10px;
+  height: 105%;
 }
 
 .element-column {
@@ -64,10 +65,16 @@ body {
   cursor: default;
   transition: box-shadow 0.3s ease-in-out;
   font-weight: bolder;
+  outline: 2px solid black;
 }
 
 .round-button:hover {
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+}
+
+.round-button:active {
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.8);
+  transform: scale(0.9);
 }
 
 .column-title {
@@ -84,8 +91,8 @@ body {
 }
 
 .image-container img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
   border-radius: 5px;
   margin-left: 30px;
@@ -102,6 +109,6 @@ body {
 }
 
 .bigButton {
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
 }
