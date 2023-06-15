@@ -113,3 +113,9 @@ body {
   width: 75px;
   height: 75px;
 }
+
+.signature {
+  font-weight: bolder;
+  margin-top: 20px;
+  margin-left: 45px;
+}
