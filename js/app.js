@@ -12,12 +12,16 @@ var button2 = document.querySelector('.button2');
 var button3 = document.querySelector('.button3');
 var button4 = document.querySelector('.button4');
 var button5 = document.querySelector('.button5');
+var surpriseButton = document.querySelector('.surpriseButton');
+var playbackButton = document.querySelector('.playbackButton');
 // Create variables to store the element chosen by each button
 var elementChosenForColumn1 = 0;
 var elementChosenForColumn2 = 0;
 var elementChosenForColumn3 = 0;
 var elementChosenForColumn4 = 0;
 var elementChosenForColumn5 = 0;
+// Create variables to store the element to highlight for each column and play correct sound
+var element, element1, element2, element3, element4, element5;
 
 /* Functions
 -------------------------------------------------- */
@@ -41,37 +45,110 @@ function chooseElement(buttonNumber) {
 	}	else if (buttonNumber == 5) {
 		elementChosenForColumn5++;
 	}
-5
+
 	// Sets the variable for the element chosen by each button back to 1 if it reaches the maximum number of elements
 	if (elementChosenForColumn1 == 8) {
 		elementChosenForColumn1 = 1;
-	} else if (elementChosenForColumn2 == 6) {
+	} else if (elementChosenForColumn2 == 7) {
 		elementChosenForColumn2 = 1;
-	} else if (elementChosenForColumn3 == 6) {
+	} else if (elementChosenForColumn3 == 7) {
 		elementChosenForColumn3 = 1;
-	} else if (elementChosenForColumn4 == 7) {
+	} else if (elementChosenForColumn4 == 8) {
 		elementChosenForColumn4 = 1;
-	} else if (elementChosenForColumn5 == 6) {
+	} else if (elementChosenForColumn5 == 7) {
 		elementChosenForColumn5 = 1;
 	}
 
-	let element;
-
-	// Get the element to highlight
+	// Get the element to highlight for column 1
 	if (elementChosenForColumn1 == 1) {
-		element = document.getElementById('col1_element1');
+		element1 = document.getElementById('col1_element1');
 	}	else if (elementChosenForColumn1 == 2) {
-		element = document.getElementById('col1_element2');
+		element1 = document.getElementById('col1_element2');
 	}	else if (elementChosenForColumn1 == 3) {
-		element = document.getElementById('col1_element3');
+		element1 = document.getElementById('col1_element3');
 	}	else if (elementChosenForColumn1 == 4) {
-		element = document.getElementById('col1_element4');
+		element1 = document.getElementById('col1_element4');
 	}	else if (elementChosenForColumn1 == 5) {
-		element = document.getElementById('col1_element5');
+		element1 = document.getElementById('col1_element5');
 	}	else if (elementChosenForColumn1 == 6) {
-		element = document.getElementById('col1_element6');
+		element1 = document.getElementById('col1_element6');
 	}	else if (elementChosenForColumn1 == 7) {
-		element = document.getElementById('col1_element7');
+		element1 = document.getElementById('col1_element7');
+	}
+
+	// Get the element to highlight for column 2
+	if (elementChosenForColumn2 == 1) {
+		element2 = document.getElementById('col2_element1');
+	}	else if (elementChosenForColumn2 == 2) {
+		element2 = document.getElementById('col2_element2');
+	}	else if (elementChosenForColumn2 == 3) {
+		element2 = document.getElementById('col2_element3');
+	}	else if (elementChosenForColumn2 == 4) {
+		element2 = document.getElementById('col2_element4');
+	}	else if (elementChosenForColumn2 == 5) {
+		element2 = document.getElementById('col2_element5');
+	}	else if (elementChosenForColumn2 == 6) {
+		element2 = document.getElementById('col2_element6');
+	}
+
+	// Get the element to highlight for column 3
+	if (elementChosenForColumn3 == 1) {
+		element3 = document.getElementById('col3_element1');
+	}	else if (elementChosenForColumn3 == 2) {
+		element3 = document.getElementById('col3_element2');
+	}	else if (elementChosenForColumn3 == 3) {
+		element3 = document.getElementById('col3_element3');
+	}	else if (elementChosenForColumn3 == 4) {
+		element3 = document.getElementById('col3_element4');
+	}	else if (elementChosenForColumn3 == 5) {
+		element3 = document.getElementById('col3_element5');
+	}	else if (elementChosenForColumn3 == 6) {
+		element3 = document.getElementById('col3_element6');
+	}
+
+	// Get the element to highlight for column 4
+	if (elementChosenForColumn4 == 1) {
+		element4 = document.getElementById('col4_element1');
+	}	else if (elementChosenForColumn4 == 2) {
+		element4 = document.getElementById('col4_element2');
+	}	else if (elementChosenForColumn4 == 3) {
+		element4 = document.getElementById('col4_element3');
+	}	else if (elementChosenForColumn4 == 4) {
+		element4 = document.getElementById('col4_element4');
+	}	else if (elementChosenForColumn4 == 5) {
+		element4 = document.getElementById('col4_element5');
+	}	else if (elementChosenForColumn4 == 6) {
+		element4 = document.getElementById('col4_element6');
+	}	else if (elementChosenForColumn4 == 7) {
+		element4 = document.getElementById('col4_element7');
+	}
+
+	// Get the element to highlight for column 5
+	if (elementChosenForColumn5 == 1) {
+		element5 = document.getElementById('col5_element1');
+	}	else if (elementChosenForColumn5 == 2) {
+		element5 = document.getElementById('col5_element2');
+	}	else if (elementChosenForColumn5 == 3) {
+		element5 = document.getElementById('col5_element3');
+	}	else if (elementChosenForColumn5 == 4) {
+		element5 = document.getElementById('col5_element4');
+	}	else if (elementChosenForColumn5 == 5) {
+		element5 = document.getElementById('col5_element5');
+	}	else if (elementChosenForColumn5 == 6) {
+		element5 = document.getElementById('col5_element6');
+	}
+
+	// Sets correct element to play sound and highlight image
+	if (buttonNumber == 1) {
+		element = element1;
+	} else if (buttonNumber == 2) {
+		element = element2;
+	}	else if (buttonNumber == 3) {
+		element = element3;
+	}	else if (buttonNumber == 4) {
+		element = element4;
+	}	else if (buttonNumber == 5) {
+		element = element5;
 	}
 
 	// Remove highlighted class from all elements
@@ -86,8 +163,6 @@ function chooseElement(buttonNumber) {
 	// Speak alt of the element
 	textToSpeak = element.getAttribute('alt');
 	speakNow(textToSpeak);
-
-	console.log(elementChosenForColumn1);
 }
 
 /* Event Listeners
@@ -100,7 +175,75 @@ function chooseElement(buttonNumber) {
 button1.addEventListener('click', function() {
   chooseElement(1);
 });
-// button2.addEventListener('click', chooseElement(2));
-// button3.addEventListener('click', chooseElement(3));
-// button4.addEventListener('click', chooseElement(4));
-// button5.addEventListener('click', chooseElement(5));
+button2.addEventListener('click', function() {
+	chooseElement(2);
+});
+button3.addEventListener('click', function() {
+	chooseElement(3);
+});
+button4.addEventListener('click', function() {
+	chooseElement(4);
+});
+button5.addEventListener('click', function() {
+	chooseElement(5);
+});
+playbackButton.addEventListener('click', function() {
+	// Set variables to a random element
+	elementChosenForColumn1 = Math.floor(Math.random() * 7) + 1;
+	elementChosenForColumn2 = Math.floor(Math.random() * 6) + 1;
+	elementChosenForColumn3 = Math.floor(Math.random() * 6) + 1;
+	elementChosenForColumn4 = Math.floor(Math.random() * 7) + 1;
+	elementChosenForColumn5 = Math.floor(Math.random() * 6) + 1;
+	console.log(elementChosenForColumn1);
+	console.log(elementChosenForColumn2);
+	console.log(elementChosenForColumn3);
+	console.log(elementChosenForColumn4);
+	console.log(elementChosenForColumn5);
+	// Speak alt of all the elements
+	textToSpeak = element1.getAttribute('alt');
+	speakNow(textToSpeak);
+	// Wait half a second before speaking the next element
+	setTimeout(function() {
+		textToSpeak = element2.getAttribute('alt');
+		speakNow(textToSpeak);
+	}, 250);
+	setTimeout(function() {
+		textToSpeak = element3.getAttribute('alt');
+		speakNow(textToSpeak);
+	}, 500);
+	setTimeout(function() {
+		textToSpeak = element4.getAttribute('alt');
+		speakNow(textToSpeak);
+	}, 1000);
+	setTimeout(function() {
+		textToSpeak = element5.getAttribute('alt');
+		speakNow(textToSpeak);
+	}, 1500);
+});
+playbackButton.addEventListener('click', function() {
+	// Speak alt of all the elements
+	textToSpeak = element1.getAttribute('alt') + " " + element2.getAttribute('alt') + " " + element3.getAttribute('alt') + " " + element4.getAttribute('alt') + " " + element5.getAttribute('alt');
+	console.log(textToSpeak);
+	speakNow(textToSpeak);
+	// // Wait half a second before speaking the next element
+	// setTimeout(function() {
+	// 	textToSpeak = element2.getAttribute('alt');
+	// 	console.log(textToSpeak);
+	// 	speakNow(textToSpeak);
+	// }, 250);
+	// setTimeout(function() {
+	// 	textToSpeak = element3.getAttribute('alt');
+	// 	console.log(textToSpeak);
+	// 	speakNow(textToSpeak);
+	// }, 500);
+	// setTimeout(function() {
+	// 	textToSpeak = element4.getAttribute('alt');
+	// 	console.log(textToSpeak);
+	// 	speakNow(textToSpeak);
+	// }, 1000);
+	// setTimeout(function() {
+	// 	textToSpeak = element5.getAttribute('alt');
+	// 	console.log(textToSpeak);
+	// 	speakNow(textToSpeak);
+	// }, 1500);
+});

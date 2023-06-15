@@ -45,6 +45,14 @@ body {
   background-color: pink;
 }
 
+.red-bg {
+  background-color: red;
+}
+
+.blue-bg {
+  background-color: blue;
+}
+
 .round-button {
   border-radius: 50%;
   width: 60px;
@@ -55,6 +63,7 @@ body {
   color: white;
   cursor: default;
   transition: box-shadow 0.3s ease-in-out;
+  font-weight: bolder;
 }
 
 .round-button:hover {
@@ -90,4 +99,9 @@ body {
 
 .highlighted {
   background-color: yellow;
+}
+
+.bigButton {
+  width: 100px;
+  height: 100px;
 }
