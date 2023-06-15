@@ -172,10 +172,6 @@ function chooseElement(buttonNumber) {
 
 /* Event Listeners
 -------------------------------------------------- */
-// Onclick handler for the button that speaks the text contained in the above var textToSpeak
-// speakButton.onclick = function() {
-// 	speakNow(textToSpeak);
-// }
 // Event listeners for buttons
 button1.addEventListener('click', function() {
   chooseElement(1);
@@ -192,6 +188,8 @@ button4.addEventListener('click', function() {
 button5.addEventListener('click', function() {
 	chooseElement(5);
 });
+
+// Event listener for button that generates a random phrase
 surpriseButton.addEventListener('click', function() {
 	// Set variables to a random element
 	elementChosenForColumn1 = Math.floor(Math.random() * 7) + 1;
@@ -205,6 +203,8 @@ surpriseButton.addEventListener('click', function() {
 	textToSpeak = element1.getAttribute('alt') + " " + element2.getAttribute('alt') + " " + element3.getAttribute('alt') + " " + element4.getAttribute('alt') + " " + element5.getAttribute('alt');
 	speakNow(textToSpeak);
 });
+
+// Event listener for button that plays the chosen phrase
 playbackButton.addEventListener('click', function() {
 	// Speak alt of all the elements
 	textToSpeak = element1.getAttribute('alt') + " " + element2.getAttribute('alt') + " " + element3.getAttribute('alt') + " " + element4.getAttribute('alt') + " " + element5.getAttribute('alt');
